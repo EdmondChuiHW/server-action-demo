@@ -12,10 +12,12 @@ Clone and run it locally. It uses an in-memory "server". Feel free to submit a P
 
 ---
 `/account`
+
 ![Screenshot of the /account page](account.png)
 
 ---
 `/account/edit`
+
 ![Screenshot of the /account/edit page](account_edit.png)
 
 
