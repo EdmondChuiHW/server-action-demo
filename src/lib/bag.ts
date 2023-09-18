@@ -1,3 +1,5 @@
+import "server-only";
+
 const bagHolder = { trustMeBro: "Some server value", count: 0 };
 
 export function setBag(bag: string) {
