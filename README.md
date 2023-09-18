@@ -1,6 +1,6 @@
 # Server Action Demo
 
-Simple demo for understanding how Next deals with caching Server Components
+Simple demo for understanding how Next13 deals with caching Server Components under app directly
 
 - `redirect()`
 - `revalidatePath()`
