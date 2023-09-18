@@ -28,46 +28,64 @@ export default function EditPage() {
   return (
     <>
       <section>
-        <form action={genSubmitEditWithRedirect}>
-          <pre>
-            {`
+        <h2>Submit with redirect</h2>
+        <ul>
+          <li>Redirects upon response</li>
+          <li>Updates soft-nav server values</li>
+          <li>Updates hard-nav server values</li>
+        </ul>
+        <pre>
+          {`
 "use server";
 
 setBag("Last updated via redirect");
 
 redirect("/account");
             `}
-          </pre>
+        </pre>
+        <form action={genSubmitEditWithRedirect}>
           <button>Submit with redirect</button>
         </form>
       </section>
 
       <hr />
       <section>
-        <form action={genSubmitEditWithRevalidatePath}>
-          <pre>
-            {`
+        <h2>Submit with revalidatePath</h2>
+        <ul>
+          <li>Does not redirect upon response</li>
+          <li>Updates soft-nav server values</li>
+          <li>Updates hard-nav server values</li>
+        </ul>
+        <pre>
+          {`
 "use server";
 
 setBag("Last updated via revalidate path");
 
 revalidatePath("/account");
             `}
-          </pre>
+        </pre>
+        <form action={genSubmitEditWithRevalidatePath}>
           <button>Submit with revalidatePath</button>
         </form>
       </section>
 
       <hr />
       <section>
-        <form action={genSubmitEditWithoutAnything}>
-          <pre>
-            {`
+        <h2>Submit without anything</h2>
+        <ul>
+          <li>Does not redirect upon response</li>
+          <li>Does not update soft-nav server values</li>
+          <li>Updates hard-nav server values</li>
+        </ul>
+        <pre>
+          {`
 "use server";
 
 setBag("Not seen until hard-nav");
             `}
-          </pre>
+        </pre>
+        <form action={genSubmitEditWithoutAnything}>
           <button>Submit without anything</button>
         </form>
       </section>
