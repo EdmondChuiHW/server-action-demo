@@ -1,6 +1,16 @@
 import { revalidatePath } from "next/cache";
 import { setBag } from "../../../lib/bag";
 import { redirect } from "next/navigation";
+import MyClientComp from "@/app/account/edit/MyClientComp";
+
+async function myServerAction() {
+  "use server";
+
+  setBag("Last updated via redirect from client component");
+
+  redirect("/account");
+}
+
 
 async function genSubmitEditWithRedirect() {
   "use server";
@@ -27,6 +37,7 @@ async function genSubmitEditWithoutAnything() {
 export default function EditPage() {
   return (
     <>
+      <MyClientComp myServerAction={myServerAction} />
       <section>
         <h2>Submit with redirect</h2>
         <ul>
